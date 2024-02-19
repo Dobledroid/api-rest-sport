@@ -1,14 +1,14 @@
 
 export const sendMethod = async (req, res) => {
   const { method, email } = req.body;
-  // console.log("Methiod", method, email)
+  console.log("sendMethod", method, email)
   if ((method == null || method === '') || (email == null || email === '')) {
     return res.status(400).json({ msg: 'Bad Request. Please enter all fields' });
   }
 
   try {
 
-    // const emailResponse = await fetch(`http://localhost:3001/api/users/email/${email}`);
+    // const emailResponse = await fetch(`http://localhost:3010/api/users/email/${email}`);
     const emailResponse = await fetch(`https://api-rest-sport.vercel.app/api/users/email/${email}`);
 
     if (emailResponse.status === 404) {
