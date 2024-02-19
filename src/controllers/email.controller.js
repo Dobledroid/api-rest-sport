@@ -11,15 +11,11 @@ export const sendRecoveryEmail = async (req, res) => {
   try {
     const randomCode = generateRandomCode();
 
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      throw new Error('Faltan las variables de entorno para el correo electrónico o la contraseña.');
-    }
-
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: 'sportgymcenterinfo@gmail.com',
+        pass: 'faol swhy ktje sibg',
       },
     });
 
@@ -114,14 +110,12 @@ export const envioCorreoAccesoNoBloqueado = async (req, res) => {
   const { to, intentosFallidos } = req.body;
   console.log("to, intentosFallidos", to, intentosFallidos)
   try {
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      throw new Error('Faltan las variables de entorno para el correo electrónico o la contraseña.');
-    }
+    
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: 'sportgymcenterinfo@gmail.com',
+        pass: 'faol swhy ktje sibg',
       },
     });
 
@@ -217,14 +211,12 @@ export const envioCorreoCuentaBloqueada = async (req, res) => {
   const { to, tiempoBloqueo } = req.body;
   console.log("to, tiempoBloqueo", to, tiempoBloqueo)
   try {
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      throw new Error('Faltan las variables de entorno para el correo electrónico o la contraseña.');
-    }
+
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: 'sportgymcenterinfo@gmail.com',
+        pass: 'faol swhy ktje sibg',
       },
     });
 
@@ -319,16 +311,12 @@ export const envioCorreoInicioSesion = async (req, res) => {
     const ahora = new Date();
     const fechaActual = ahora.toLocaleDateString('es-ES');
     const horaActual = ahora.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      throw new Error('Faltan las variables de entorno para el correo electrónico o la contraseña.');
-    }
     
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: 'sportgymcenterinfo@gmail.com',
+        pass: 'faol swhy ktje sibg',
       },
     });
 

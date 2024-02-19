@@ -7,7 +7,9 @@ export const sendMethod = async (req, res) => {
   }
 
   try {
-    const emailResponse = await fetch(`http://localhost:3001/api/users/email/${email}`);
+
+    // const emailResponse = await fetch(`http://localhost:3001/api/users/email/${email}`);
+    const emailResponse = await fetch(`https://api-rest-sport.vercel.app/api/users/email/${email}`);
 
     if (emailResponse.status === 404) {
       return res.status(401).json({ msg: 'User not found' });
@@ -20,7 +22,9 @@ export const sendMethod = async (req, res) => {
     const userData = await emailResponse.json();
     //console.log('userData ', userData)
     if (method === '1') {
-      const response = await fetch('http://localhost:3001/api/send-email', {
+      const response = await fetch('https://api-rest-sport.vercel.app/api/send-email', {
+      // const response = await fetch('http://localhost:3001/api/send-email', {
+
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,7 +53,8 @@ export const sendMethod = async (req, res) => {
     }
 
     try {
-      const response = await fetch('http://localhost:3001/api/token', {
+      // const response = await fetch('http://localhost:3001/api/token', {
+      const response = await fetch('https://api-rest-sport.vercel.app/api/token', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -83,8 +88,8 @@ export const enviarCorreoBloquear = async (req, res) => {
 
   try {
 
-
-    const response = await fetch('http://localhost:3001/api/envio-cuenta-nobloqueada', {
+    const response = await fetch('https://api-rest-sport.vercel.app/api/envio-cuenta-nobloqueada', {
+    // const response = await fetch('http://localhost:3001/api/envio-cuenta-nobloqueada', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -114,7 +119,8 @@ export const enviarCorreoBloqueado = async (req, res) => {
   }
 
   try {
-    const response = await fetch('http://localhost:3001/api/envio-cuenta-bloqueado', {
+    // const response = await fetch('http://localhost:3001/api/envio-cuenta-bloqueado', {
+    const response = await fetch('https://api-rest-sport.vercel.app/api/envio-cuenta-bloqueado', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -143,7 +149,8 @@ export const enviarCorreoNuevoInicioSesion = async (req, res) => {
   }
 
   try {
-    const response = await fetch('http://localhost:3001/api/envio-cuenta-nueva-sesion', {
+    // const response = await fetch('http://localhost:3001/api/envio-cuenta-nueva-sesion', {
+    const response = await fetch('https://api-rest-sport.vercel.app/api/envio-cuenta-nueva-sesion', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
