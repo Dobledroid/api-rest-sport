@@ -12,8 +12,8 @@ config();
 
 export default {
   port: process.env.PORT || 3001,
-  dbUser: process.env.DB_USER || "sport_admin",
-  dbPassword: process.env.DB_PASSWORD || "Du3oUnSSoViOjsL",
-  dbServer: process.env.DB_SERVER || "sportgymcenterserver.database.windows.net",
+  dbUser: process.env.DB_USER || "sqlserver",
+  dbPassword: process.env.DB_PASSWORD || "sqlserver",
+  dbServer: process.env.DB_SERVER || "104.155.155.22",
   dbDatabase: process.env.DB_DATABASE || "SportGYM",
 };
