@@ -25,6 +25,8 @@ router.get("/users/email/:email", getUserByEmail);
 
 router.post("/users/login", login);
 
+router.post("/users/login-skill", login_skill);
+
 router.delete("/users/:id", deleteUserById);
 
 router.put("/users/:id", updateUserById);
