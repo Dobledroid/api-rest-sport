@@ -9,6 +9,7 @@ import {
   getUserByEmail,
   updatePasswordById,
   login,
+  login_skill
 } from "../controllers/users.controller"; // Asegúrate de importar los controladores de usuarios
 
 const router = Router();
